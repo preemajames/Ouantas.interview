@@ -1,9 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-
 import * as _ from 'lodash';
 import { HotelCard } from './hotel-card';
-
 
 test('detail displayed on the screen should same as hotel object passed intto it',  () => {
     var hotel = {

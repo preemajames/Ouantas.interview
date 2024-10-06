@@ -1,5 +1,4 @@
 import React from "react";
-
 import { HotelCard } from "./hotel-card/hotel-card";
 import { IHotel } from "../hotel.model";
 

@@ -17,17 +17,17 @@ export const HotelSearchContainer = () => {
              return _.sortBy(hotels, [function (o) { return o.offer.displayPrice?.amount; }]);
         }
     }
-
+    
     const hotels: IHotel[] = getHotelDetails(sortBy) ;
 
     var onSortChanged = (Sortby: string) =>{
         setSortBy(Sortby)
     }
+
     return (
         <div data-testid="hotel-search-container">
             <SearchPanel hotelCount ={hotels.length} onSort={onSortChanged}/>
             <SearchResult hotels = {hotels}/>
         </div>
     );
-
 }

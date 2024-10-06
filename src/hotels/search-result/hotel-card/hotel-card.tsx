@@ -1,4 +1,3 @@
-
 import { IHotel } from "../../hotel.model";
 import { Rating } from "./rating/rating";
 import styles from  "../hotel-search.module.scss";
