@@ -6,11 +6,11 @@ import { useState } from "react";
 import * as _ from 'lodash';
 
 export const HotelSearchContainer = () => {
-    const [sortBy, setSortBy] = useState("high-to-low")
+    const [sortBy, setSortBy] = useState("price-high-low")
    
     var getHotelDetails = (sotby: string): IHotel[]  =>{
         const hotels: IHotel[] = QANTAS_HOTELS.results;
-        if(sotby === 'high-to-low') {
+        if(sotby === 'price-high-low') {
              return _.sortBy(hotels, [function (o) { return o.offer.displayPrice?.amount; }]).reverse();
          }
         else{

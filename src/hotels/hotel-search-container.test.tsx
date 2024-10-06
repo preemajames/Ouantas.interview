@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 
 function getHotelDetailsSortBy(sotby: string){
     const hotels = QANTAS_HOTELS.results;
-    if(sotby === 'high-to-low') {
+    if(sotby === 'price-high-low') {
          return _.sortBy(hotels, [function (o) { return o.offer.displayPrice?.amount; }]).reverse();
      }
     else{
@@ -16,7 +16,7 @@ function getHotelDetailsSortBy(sotby: string){
 }
 
 test('hotel count displayed on the sreen should be same as total hotels returns',  () => {
-    var hotels = getHotelDetailsSortBy("high-to-low");
+    var hotels = getHotelDetailsSortBy("price-high-low");
    
     render(<HotelSearchContainer />)
    
@@ -24,15 +24,14 @@ test('hotel count displayed on the sreen should be same as total hotels returns'
     expect(hotels.length + " hotels in <span class=\"font-bold\">Sydney</span>").toBe(searchResult.innerHTML.trim());
 });
 
-
 test('sort hotel details from high price to low price',  async () => {
-    var hotels = getHotelDetailsSortBy("high-to-low");
+    var hotels = getHotelDetailsSortBy("price-high-low");
     const user = userEvent.setup();
     
     const { container } = render(<HotelSearchContainer />)
     
     const sortDropDown = screen.getByTestId('drp-hotel-sort');
-    await user.selectOptions(sortDropDown, 'high-to-low');
+    await user.selectOptions(sortDropDown, 'price-high-low');
     const hotelnames = container.getElementsByClassName("hotelname");
   
     for (let i = 0; i < hotelnames.length; i++) {
@@ -40,15 +39,14 @@ test('sort hotel details from high price to low price',  async () => {
     }
 });
 
-
 test('sort hotel details from low price to high price',  async () => {
-    var hotels = getHotelDetailsSortBy("low-to-high");
+    var hotels = getHotelDetailsSortBy("price-low--high");
     const user = userEvent.setup();
     
     const { container } = render(<HotelSearchContainer />)
     
     const sortDropDown = screen.getByTestId('drp-hotel-sort');
-    await user.selectOptions(sortDropDown, 'low-to-high');
+    await user.selectOptions(sortDropDown, 'price-low-high');
     const hotelnames = container.getElementsByClassName("hotelname");
   
     for (let i = 0; i < hotelnames.length; i++) {

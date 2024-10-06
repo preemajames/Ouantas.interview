@@ -9,7 +9,7 @@ test('rate should be greater than zero',  () => {
     expect(hotel_rate_section.length).toBe(0)
 });
 
-test('rate icons should equal to the rate value passed to the component',  () => {
+test('rate icons should equal to the rate value passed into the component',  () => {
     render(<Rating rate = {3} type = "star" />)
    
     const hotel_rate_section = screen.getByTestId('hotel-rating-section');

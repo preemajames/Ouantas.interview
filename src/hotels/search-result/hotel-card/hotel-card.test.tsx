@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import * as _ from 'lodash';
 import { HotelCard } from './hotel-card';
 
-test('detail displayed on the screen should same as hotel object passed intto it',  () => {
+test('detail displayed on the screen should same as the hotel object passed into the component',  () => {
     var hotel = {
         "id": "cxd650nuyo",
         "property": {

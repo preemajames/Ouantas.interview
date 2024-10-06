@@ -5,8 +5,8 @@ export const SearchPanel:React.FC<{hotelCount:number;  onSort(sortBy: string): v
             <div className="searchpanel">
                 <span className="font-bold">Sort by </span> 
                 <select className="border"   onChange={e => props.onSort(e.target.value)} data-testid="drp-hotel-sort">
-                <option value="high-to-low">Price high-low</option>
-                <option value="low-to-high">price low-high</option>
+                <option value="price-high-low">Price high-low</option>
+                <option value="price-low-high">price low-high</option>
                 </select>
             </div>
         </div>
