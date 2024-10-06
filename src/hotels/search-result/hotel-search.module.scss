@@ -1,0 +1,38 @@
+.hotelname{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.hotelprice{
+    font-size: 40px;
+    font-weight: 500;
+    text-align: right;
+}
+.saveamount{
+    font-size: 25px;
+    font-weight: 500;
+   color: #a81414;
+}
+
+.searchpanel{
+    border-top: 1px solid  #cfcece
+}
+.offerlabel{
+    font-size: 15px;
+    color: #a81414;
+    text-decoration: underline;
+    padding-top: 10px;
+}
+
+.cancellabel{
+    font-size: 15px;
+    color: #083523;
+    text-decoration: underline;
+    padding-top: 30px;
+}
+.superscript{
+    margin-top: 10px;
+    font-size: 50%;
+  vertical-align: top;
+  content: "+";
+}
